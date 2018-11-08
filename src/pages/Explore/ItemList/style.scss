@@ -1,0 +1,30 @@
+.row {
+    &_custom {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        > div {
+            margin-bottom: 15px;
+        }
+        .ui.card {
+            height: 100%;
+        }
+    }
+}
+
+.list-section {
+    padding-bottom: 150px;
+    .row {
+        position: relative;
+        display: flex;
+        > .col-sm-6.height {
+            min-height: 100%;
+        }
+    }
+    .sticky {
+        position: sticky;
+        position: -webkit-sticky;
+        align-self: flex-start;
+        top: 0;
+    }
+}

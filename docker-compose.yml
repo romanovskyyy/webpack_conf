@@ -1,0 +1,42 @@
+version: '3.5'
+
+services:
+  modules:
+    image: node:11.1.0
+    working_dir: '/app'
+    entrypoint: 'yarn'
+    volumes:
+      - './package.json:/app/package.json'
+      - 'node_modules:/app/node_modules'
+    networks:
+      - searfi
+
+  web:
+    image: node:11.1.0
+    working_dir: '/app'
+    command: 'npm run dc:start'
+    ports:
+      - '3001:3001'
+      - '34512:34512'
+    networks:
+      - searfi
+    volumes:
+      - './scripts/:/app/scripts:delegated'
+      - './src/:/app/src:delegated'
+      - './server/:/app/server:delegated'
+      - './public/:/app/public:delegated'
+      - './package.json:/app/package.json:delegated'
+      - 'node_modules:/app/node_modules:delegated'
+    environment:
+      - API_URL=${API_URL}
+      - ADMIN_API_URL=${ADMIN_API_URL}
+      - CLIENT_URL=${CLIENT_URL}
+      - NODE_ENV=${NODE_ENV}
+
+networks:
+  searfi:
+    name: searfi_api
+    external: true
+
+volumes:
+  node_modules:

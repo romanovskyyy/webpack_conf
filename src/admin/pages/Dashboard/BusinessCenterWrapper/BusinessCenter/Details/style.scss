@@ -1,0 +1,54 @@
+.businessInfoPanel {
+    .accordion {
+        &-item {
+            .heading {
+                cursor: pointer;
+                .icons:after {
+                    will-change: width;
+                }
+                &[aria-selected='true'] {
+                    .icons {
+                        &:after {
+                            width: 0;
+                        }
+                        border-bottom: 1px solid var(--main-color);
+                    }
+                }
+            }
+            .content {
+                display: block;
+                &[aria-hidden='false'] {
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    border: 1px solid #45a7b9;
+                    border-top: none;
+                }
+                padding-left: 50px;
+                padding-right: 50px;
+                background-color: #fff;
+                textarea.form-control {
+                    height: 100px;
+                }
+            }
+        }
+        &__body {
+            max-height: 99999px;
+            will-change: max-height;
+            transition: max-height 0.4s cubic-bezier(1, 0, 1, 0), padding-top 0.4s,
+                padding-bottom 0.4s;
+            &--hidden {
+                overflow: hidden;
+                max-height: 0;
+                transition-timing-function: cubic-bezier(0, 1, 0, 1);
+            }
+            .form-group {
+                float: none !important;
+            }
+        }
+        &-error {
+            .heading {
+                background-color: #9f3a38;
+            }
+        }
+    }
+}

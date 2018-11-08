@@ -1,0 +1,12 @@
+@media (max-width: 768px) {
+    .visible-xs {
+        .profile-section {
+            .user-details {
+                p.fa.fa-user-circle-o {
+                    font-size: 50px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

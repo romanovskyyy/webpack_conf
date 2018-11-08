@@ -1,0 +1,15 @@
+.carousel-inner {
+    overflow: visible;
+    .carousel-control {
+        background-image: none;
+    }
+    .item {
+        padding: 0 15px;
+    }
+    .carousel-indicators {
+        .dot {
+            margin: 3px !important;
+            vertical-align: bottom;
+        }
+    }
+}

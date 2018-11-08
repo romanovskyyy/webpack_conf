@@ -1,0 +1,14 @@
+.step-progress {
+    .step-slider {
+        display: flex;
+        justify-content: space-between;
+        width: 95px;
+        .step-slider-item {
+            margin-right: 0;
+        }
+    }
+}
+
+.react-datepicker-popper[data-placement^='bottom'] .react-datepicker__triangle {
+    border-bottom-color: #fff !important;
+}

@@ -1,0 +1,31 @@
+.profileImage {
+    position: relative;
+    img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+    }
+    .fa-user-circle-o {
+        font-size: 170px;
+    }
+    &Upload {
+        .file {
+            visibility: visible;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            bottom: 0;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .profileImage {
+        .fa-user-circle-o {
+            font-size: 120px;
+        }
+    }
+}

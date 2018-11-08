@@ -1,0 +1,13 @@
+.worksArea {
+    .tabs {
+        display: none;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+#how_it_works {
+    position: absolute;
+    top: 25%;
+}

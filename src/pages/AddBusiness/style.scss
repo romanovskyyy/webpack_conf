@@ -1,0 +1,55 @@
+.BusinessRegistrationForm {
+    .dropdown.icon {
+        font-size: 12px !important;
+    }
+}
+
+.stepper .nav-tabs {
+    .active.disabled > [data-toggle='tab'] {
+        &:hover,
+        &:focus {
+            cursor: not-allowed;
+        }
+    }
+    > li.active:last-child .round-tab {
+        background: #fff;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.form-section-two {
+    .search.dropdown {
+        .text {
+            max-width: none;
+        }
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 769px) {
+    .form-section-one {
+        .search.dropdown.area {
+            .text {
+                max-width: 100px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .field-wrapper_error-bug {
+        width: 100%;
+        float: left;
+    }
+}
+@media (max-width: 767px) {
+    .form-section-one .searchPart {
+        margin-bottom: 30px;
+    }
+    .form-section-two {
+        .ui.multiple.dropdown {
+            float: none;
+        }
+    }
+}

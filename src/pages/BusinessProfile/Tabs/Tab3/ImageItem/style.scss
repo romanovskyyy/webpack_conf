@@ -1,0 +1,14 @@
+.thumb {
+    .thumbnail {
+        width: 100%;
+        height: 120px;
+        cursor: pointer;
+        img {
+            height: 100% !important;
+        }
+    }
+    .addPhoto {
+        height: 120px;
+        cursor: pointer;
+    }
+}

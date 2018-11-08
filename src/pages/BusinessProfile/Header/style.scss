@@ -1,0 +1,25 @@
+.listingTitleArea {
+    .business-profile-tag {
+        .item {
+            .content {
+                width: auto !important;
+            }
+        }
+    }
+    .listingReview {
+        .rating {
+            > li {
+                margin-right: 5px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .no-float {
+        float: none !important;
+    }
+}

@@ -1,0 +1,34 @@
+.leftPanel {
+    left: 0 !important;
+    .sideNav {
+        position: sticky;
+        top: 0;
+        li {
+            background-color: #45a7b9;
+        }
+        li[disabled] {
+            a {
+                cursor: not-allowed;
+                background-color: #ccc !important;
+                border-bottom-color: #ccc !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .leftPanel {
+        transition: 0.4s transform;
+        will-change: transform;
+        overflow-y: auto;
+        &.closee {
+            transform: translateX(-100%);
+        }
+        &.open {
+            transform: translateX(0);
+        }
+        .sideNav {
+            position: initial;
+        }
+    }
+}

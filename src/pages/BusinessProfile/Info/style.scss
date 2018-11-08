@@ -1,0 +1,17 @@
+.detailsInfoBox {
+    .horizontal.list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        .item {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.location-details {
+    .location {
+        margin-bottom: 0;
+    }
+}

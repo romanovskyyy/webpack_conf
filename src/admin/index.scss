@@ -1,0 +1,42 @@
+@import './fonts.scss';
+
+html {
+    font-size: 15px;
+}
+
+body {
+    height: 100vh;
+}
+
+#root {
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.error {
+    input,
+    textarea {
+        background: #fff6f6;
+        border-color: #e0b4b4;
+        color: #9f3a38;
+        &::placeholder {
+            color: #9f3a38;
+        }
+    }
+    span {
+        margin-bottom: 10px;
+        border-color: #e0b4b4;
+        color: #9f3a38;
+        display: block;
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.editBusinessProfile {
+    overflow: initial;
+    .editMainSection {
+        display: flex;
+        .rightPanel {
+            width: 83%;
+
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+        }
+    }
+}
+@media (width: 768px) {
+    .editBusinessProfile {
+        .editMainSection {
+            .rightPanel {
+                width: 77%;
+            }
+            .leftPanel {
+                width: 23%;
+            }
+        }
+    }
+}
+.businessInfoPanel {
+    display: block;
+}
+
+@media (min-width: 1500px) {
+    .editBusinessProfile {
+        height: calc(100vh - 156px);
+        .editMainSection {
+            height: 100%;
+        }
+    }
+}

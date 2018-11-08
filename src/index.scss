@@ -1,0 +1,139 @@
+@import './fonts.scss';
+
+:root {
+    --main-color: #45a7b9;
+}
+
+.error {
+    &.searchSelectboxes,
+    .ui.dropdown,
+    &.support-document-area {
+        background: #fff6f6;
+        border-color: #e0b4b4;
+        color: #9f3a38;
+        &::placeholder {
+            color: #9f3a38;
+        }
+        .default.text {
+            color: #9f3a38 !important;
+        }
+    }
+    input,
+    textarea,
+    .row {
+        background: #fff6f6;
+        border-color: #e0b4b4;
+        color: #9f3a38;
+        &::placeholder {
+            color: #9f3a38;
+        }
+    }
+    .row {
+        border-radius: 5px;
+        border: 1px solid #e0b4b4;
+    }
+    span {
+        margin-top: 10px;
+        border-color: #e0b4b4;
+        color: #9f3a38;
+        display: block;
+        &::first-letter {
+            text-transform: capitalize;
+        }
+    }
+}
+
+span.error {
+    margin-top: 10px;
+    border-color: #e0b4b4;
+    color: #9f3a38;
+    display: block;
+    &::first-letter {
+        text-transform: capitalize;
+    }
+}
+*::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+*::-webkit-media-controls-panel {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+*::--webkit-media-controls-play-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+.rc-rate {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+    font-style: normal;
+    outline: none;
+
+    &-disabled &-star {
+        &:before,
+        &-content:before {
+            cursor: default;
+        }
+        &:hover {
+            transform: scale(1);
+        }
+    }
+
+    &-star {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        position: relative;
+        transition: all 0.3s;
+        color: rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        line-height: 1.5;
+
+        &-first,
+        &-second {
+            transition: all 0.3s;
+        }
+
+        &-first {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        &-half &-first .icon,
+        &-half &-second .icon {
+            opacity: 1;
+        }
+
+        &-half &-first .icon,
+        &-full &-second .icon {
+            color: #45a7b9 !important;
+        }
+    }
+}
+
+.ui.search.dropdown {
+    width: 100%;
+    input.search {
+        height: 100%;
+    }
+    > .text {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: block;
+    }
+}

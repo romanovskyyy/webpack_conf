@@ -1,0 +1,7 @@
+.modal {
+    display: block !important;
+    overflow-y: auto;
+    &-dialog {
+        display: block !important;
+    }
+}

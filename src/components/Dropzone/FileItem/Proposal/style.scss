@@ -1,0 +1,43 @@
+.image-wrapper {
+    position: relative;
+    .proposal {
+        display: flex;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.5);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity 0.3s;
+        label {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            &:first-child {
+                border-right: 1px solid #fff;
+            }
+            span {
+                color: #fff;
+            }
+            input {
+                display: none;
+                &:checked + span {
+                    color: var(--main-color);
+                }
+            }
+        }
+    }
+}
+.hideProposal {
+    .proposal {
+        opacity: 0;
+    }
+}
+.showProposal {
+    .proposal {
+        opacity: 1;
+    }
+}

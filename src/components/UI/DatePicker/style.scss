@@ -1,0 +1,22 @@
+.react-datepicker {
+    &-wrapper {
+        width: 100%;
+    }
+    &__input-container {
+        width: 100%;
+    }
+    &-popper {
+        z-index: 10 !important;
+    }
+    &__navigation {
+        width: 0 !important;
+        padding: 0 !important;
+    }
+    &__header {
+        background-color: transparent !important;
+        border-bottom: none !important;
+    }
+    &__day-name {
+        font-weight: 700;
+    }
+}

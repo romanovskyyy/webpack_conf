@@ -1,0 +1,14 @@
+.documentSection {
+    .thumb-wrapper {
+        .thumb {
+            height: 150px;
+            .file-thumbnail {
+                height: 100%;
+                img {
+                    height: calc(100% - 80px);
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}

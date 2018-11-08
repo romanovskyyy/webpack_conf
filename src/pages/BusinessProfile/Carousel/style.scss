@@ -1,0 +1,15 @@
+.slick-prev {
+    left: 25px !important;
+}
+.slick-next {
+    right: 25px !important;
+}
+
+.paddingAdjustTopBottom {
+    .slick-slide {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

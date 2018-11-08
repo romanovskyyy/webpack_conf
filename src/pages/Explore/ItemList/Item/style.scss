@@ -1,0 +1,18 @@
+.explore-list-box {
+    .explore-image {
+        height: 170px !important;
+        object-fit: cover;
+        @media (max-width: 768px) {
+            height: 230px !important;
+        }
+    }
+    .header {
+        word-break: break-all;
+        font-size: 1em !important;
+        line-height: 1em !important;
+    }
+}
+
+.ui.dimmer.transition.visible.active {
+    display: flex !important;
+}

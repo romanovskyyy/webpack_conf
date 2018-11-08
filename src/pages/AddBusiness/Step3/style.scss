@@ -1,0 +1,10 @@
+.priceTableWrapper {
+    &:hover {
+        cursor: not-allowed;
+    }
+    &.active {
+        &:hover {
+            cursor: default;
+        }
+    }
+}

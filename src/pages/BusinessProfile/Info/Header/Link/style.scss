@@ -1,0 +1,7 @@
+.col-sm-3.col-m-4.col-xs-3[disabled] {
+    cursor: not-allowed;
+    .ui.button {
+        background-color: #ccc !important;
+        cursor: inherit !important;
+    }
+}

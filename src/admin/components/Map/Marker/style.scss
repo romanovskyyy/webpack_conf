@@ -1,0 +1,23 @@
+.marker-div {
+    width: 35px;
+    height: 35px;
+    cursor: default;
+    user-select: none;
+    left: -13px;
+    top: -50px;
+    border-radius: 50%;
+    border: 1px solid #45a7b9;
+    img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    svg {
+        position: absolute;
+        left: -8px;
+        top: -1px;
+        fill: #45a7b9;
+    }
+}
