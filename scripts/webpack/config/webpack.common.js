@@ -1,8 +1,9 @@
 // Core
 import merge from 'webpack-merge';
+import path from "path";
 
 // Instruments
-import { BUILD, CHUNK_NAME_JS } from '../constants';
+import {BUILD, CHUNK_NAME_JS, SOURCE} from '../constants';
 import {
     loadJavaScript,
     loadFonts,
@@ -18,6 +19,7 @@ export default () => {
 
     return merge(
         {
+            entry: SOURCE,
             output: {
                 path:          BUILD,
                 filename:      IS_DEVELOPMENT ? '[name].js' : `js/entry~${CHUNK_NAME_JS}`,

@@ -3,7 +3,7 @@ export const loadJavaScript = () => {
         module: {
             rules: [
                 {
-                    test: /\.js$/,
+                    test: /\.(jsx|js)$/,
                     use:  {
                         loader:  'babel-loader',
                         options: {

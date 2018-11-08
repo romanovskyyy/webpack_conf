@@ -21,12 +21,13 @@ services:
     networks:
       - searfi
     volumes:
-      - './scripts/:/app/scripts:delegated'
-      - './src/:/app/src:delegated'
-      - './server/:/app/server:delegated'
-      - './public/:/app/public:delegated'
-      - './package.json:/app/package.json:delegated'
-      - 'node_modules:/app/node_modules:delegated'
+      - './scripts/:/app/scripts'
+      - './src/:/app/src'
+      - './server/:/app/server'
+      - './static/:/app/static'
+      - './public/:/app/public'
+      - './package.json:/app/package.json'
+      - 'node_modules:/app/node_modules'
     environment:
       - API_URL=${API_URL}
       - ADMIN_API_URL=${ADMIN_API_URL}
@@ -36,7 +37,6 @@ services:
 networks:
   searfi:
     name: searfi_api
-    external: true
 
 volumes:
   node_modules:
