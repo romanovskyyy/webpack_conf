@@ -61,7 +61,7 @@ const loadCss = ({ sourceMap = false } = { sourceMap: false }) => ({
     loader:  'css-loader',
     options: {
         modules:        true,
-        importLoaders:  1,
+        importLoaders:  2,
         localIdentName: '[path][name]__[local]--[hash:base64:5]',
         sourceMap,
     },
@@ -71,11 +71,25 @@ export const loadDevCss = () => ({
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /(\.css|\.scss|\.sass)$/,
                 use:  [
                     'style-loader',
                     loadCss({ sourceMap: true }),
-                    loadPostCss({ sourceMap: true, minimize: false }),
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: () => [require('autoprefixer')],
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            // includePaths: [path.resolve(__dirname, 'src', 'scss')],
+                            sourceMap: true
+                        }
+                    }
+                    // loadPostCss({ sourceMap: true, minimize: false }),
                 ],
             },
         ],
@@ -86,7 +100,7 @@ export const loadProdCss = () => ({
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /(\.css|\.scss|\.sass)$/,
                 use:  [
                     MiniCssExtractPlugin.loader, // mini-css-loader
                     loadCss({ sourceMap: false }), // css-loader

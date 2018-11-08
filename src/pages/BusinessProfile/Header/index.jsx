@@ -3,7 +3,7 @@ import './style.scss';
 
 import Tag from '../Info/Labels/Tag';
 import { handleRenderBusinessStars } from '../../../helpers/arrRender';
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 import { renderCorrectUrl } from '../../../helpers/common';
 
 const areEqual = (prevProps, nextProps) => isEqual(prevProps, nextProps);

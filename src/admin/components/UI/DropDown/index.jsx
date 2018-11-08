@@ -7,7 +7,7 @@ import { setAreaLabel, setCityLabel } from '../../../ducks/addBusiness';
 import { getAreaAction, getCategoryAction } from '../../../ducks/dropdown';
 import { Element } from 'react-scroll';
 import { clearFields, change } from 'redux-form';
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 
 class DropDown extends Component {
     componentDidMount = () => {

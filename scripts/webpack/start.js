@@ -1,39 +1,59 @@
 // Core
 import webpack from 'webpack';
-// const MemFs = require('memory-fs');
+import devServer from 'webpack-dev-server';
+import hot from 'webpack-hot-middleware';
 import chalk from 'chalk';
+import openBrowser from 'react-dev-utils/openBrowser';
+import waitpage from 'webpack-dev-server-waitpage';
 
 // Config
-import getConfig from './config/webpack.common';
-// const memFs = new MemFs();
+import getDevConfig from './config/webpack.dev';
 
-const compiler = webpack(getConfig());
+(async () => {
+    const config = await getDevConfig();
 
-// compiler.outputFileSystem = memFs;
+    const {
+        devServer: { host, port }
+    } = config;
 
-compiler.watch({ ignored: [ 'node_modules' ] }, (error, stats) => {
-    console.log(chalk.greenBright('✓ webpack is watching...'));
-    // if (error) {
-    //     console.error(error.stack || error);
-    //
-    //     if (error.details) {
-    //         console.error(error.details);
-    //     }
-    //
-    //     return;
-    // }
+    const compiler = webpack(config);
+    const server = new devServer(compiler, {
+        host,
+        port,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3000',
+                pathRewrite: { '^/api': '' }
+            }
+        },
+        historyApiFallback: true,
+        overlay: true,
+        quiet: true,
+        clientLogLevel: 'none',
+        noInfo: true,
+        before: (app, server) => {
+            app.use(
+                waitpage(server, {
+                    theme: 'material'
+                })
+            );
+        },
+        after: (app) => {
+            app.use(
+                hot(compiler, {
+                    log: false
+                })
+            );
+        }
+    });
 
-    const info = stats.toString('errors-only');
+    server.listen(port, host, () => {
+        console.log(
+            `${chalk.greenBright('→ Server listening on')} ${chalk.blueBright(
+                `http://${host}:${port}`
+            )}`
+        );
 
-    console.log(info);
-
-    // if (stats.hasErrors()) {
-    //     console.log(chalk.redBright('→ Error!'));
-    //     console.error(info);
-    // }
-    //
-    // if (stats.hasWarnings()) {
-    //     console.log(chalk.yellowBright('→ Warning!'));
-    //     console.warn(info);
-    // }
-});
+        openBrowser(`http://${host}:${port}`);
+    });
+})();

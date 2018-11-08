@@ -4,13 +4,13 @@ import { resolve } from 'path';
 
 // Network
 export const HOST = 'localhost';
-export const PORT = 3000;
+export const PORT = 8080;
 
 // Paths
 export { PROJECT_ROOT };
-export const SOURCE = "/app/src/index.jsx"; //resolve(PROJECT_ROOT, './src');
-export const BUILD = "/app/build"//resolve(PROJECT_ROOT, './build');
-export const STATIC = "/app/static" //resolve(PROJECT_ROOT, './static');
+export const SOURCE = resolve(PROJECT_ROOT, './src');
+export const BUILD = resolve(PROJECT_ROOT, './build');
+export const STATIC = resolve(PROJECT_ROOT, './static');
 
 // Formatting
 export const CHUNK_NAME_JS = '[name].[chunkhash].[id].js';

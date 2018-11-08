@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MapClass from '../../../helpers/Map/map';
-import { debounce, isEqual } from 'lodash';
+import { debounce, isEqual } from 'lodash-es';
 import { formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import { resetLabels } from '../../../ducks/addBusiness';

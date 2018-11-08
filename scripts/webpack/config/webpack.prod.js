@@ -9,21 +9,21 @@ import {
     connectBuildAnalysis,
     optimizeModules,
     loadProdCss,
-    optimizeImages,
+    optimizeImages
 } from '../modules';
 
 export default () => {
     return merge(
         getCommonConfig(),
         {
-            mode:    'none',
-            entry:   SOURCE,
-            devtool: false,
+            mode: 'production',
+            entry: SOURCE,
+            devtool: false
         },
         cleanBuildDirectory(),
         connectBuildAnalysis(),
         optimizeModules(),
         loadProdCss(),
-        optimizeImages(),
+        optimizeImages()
     );
 };

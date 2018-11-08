@@ -3,7 +3,7 @@ import MapWithRouting from '../../../helpers/Map/routing';
 import RouteInfo from '../RouteInfo';
 
 import { connect } from 'react-redux';
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 import { RESET_ROUTE_DATA, updRouteType, RESET_DRAGGED_LOC } from '../../../ducks/mapRouting';
 
 class BusinessProfileMap extends Component {

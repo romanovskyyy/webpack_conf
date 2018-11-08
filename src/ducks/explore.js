@@ -1,5 +1,5 @@
 import { handleFetch, elasticFetch } from '../helpers/fetch';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 
 const MAIN_SEARCH = 'MAIN_SEARCH';
 const BY = 'BY';

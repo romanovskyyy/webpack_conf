@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style.scss';
 
 import { dayRender, renderTimePeriod } from '../../../../../../helpers/common';
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 class Day extends Component {
     shouldComponentUpdate = (nextProps) => !isEqual(nextProps.item, this.props.item);
 

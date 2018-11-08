@@ -1,7 +1,7 @@
 import ReactDOMServer from 'react-dom/server';
 import moment from 'moment';
 
-import { chunk, isEqual } from 'lodash';
+import { chunk, isEqual } from 'lodash-es';
 import { createSelectorCreator, defaultMemoize } from 'reselect';
 
 export const renderToMarkup = (el) => ReactDOMServer.renderToStaticMarkup(el);

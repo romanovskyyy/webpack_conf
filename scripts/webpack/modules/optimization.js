@@ -8,19 +8,19 @@ import imageminSvgo from 'imagemin-svgo';
 export const optimizeModules = () => ({
     optimization: {
         // Минификация JavaScript
-        minimize:  false,
+        minimize: true,
         minimizer: [
             new UglifyJsPlugin({
-                cache: true,
-            }),
+                cache: true
+            })
         ],
         // Останавливает эмит сборки при возникновении ошибки во время компиляции
         noEmitOnErrors: true,
 
         // ✓ Не добавляет в сборку пустые чанки
-        removeEmptyChunks:      true,
+        removeEmptyChunks: true,
         // ✓ Объединяет идентичные чанки (которые содержат одинаковые модули)
-        mergeDuplicateChunks:   true,
+        mergeDuplicateChunks: true,
         // ✓ Удаляет модуль из чанка, если этот модуль присутствует в родительском чанке
         removeAvailableModules: true,
 
@@ -29,7 +29,7 @@ export const optimizeModules = () => ({
         flagIncludedChunks: true,
 
         // определяет более часто-используемые модули, и формирует сборку меньшего размера
-        occurrenceOrder:    true,
+        occurrenceOrder: true,
         // анализирует dependency graph и пытается найти доступные для объединения модули.
         concatenateModules: false,
 
@@ -38,10 +38,10 @@ export const optimizeModules = () => ({
         providedExports: true,
         // определяет только использованные экспорты. Помогает Dead Code Elimination минифификаторов
         // удалять неиспользованные экспорты
-        usedExports:     true,
+        usedExports: true,
         // собирает зависимости более эффективно, если в package.json зависимости тоже стоит этот флаг
-        sideEffects:     true,
-    },
+        sideEffects: true
+    }
 });
 
 // parent
@@ -61,14 +61,14 @@ export const optimizeImages = () => ({
                 plugins: [
                     imageminMozjpeg({
                         progressive: true,
-                        quality:     10,
+                        quality: 10
                     }),
                     imageminPngquant({
-                        quality: 60,
+                        quality: 60
                     }),
-                    imageminSvgo(),
-                ],
-            },
-        }),
-    ],
+                    imageminSvgo()
+                ]
+            }
+        })
+    ]
 });

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Tag from './Tag';
 
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 
 class TagFilter extends Component {
     componentDidMount = () => {

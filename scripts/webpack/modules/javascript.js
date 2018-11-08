@@ -1,18 +1,19 @@
+import { resolve } from 'path';
+
 export const loadJavaScript = () => {
     return {
         module: {
             rules: [
                 {
-                    test: /\.(jsx|js)$/,
-                    use:  {
-                        loader:  'babel-loader',
+                    test: /\.(js|jsx)$/,
+                    use: {
+                        loader: 'babel-loader',
                         options: {
-                            compact: false,
-                        },
-                    },
-                   
-                },
-            ],
-        },
+                            compact: false
+                        }
+                    }
+                }
+            ]
+        }
     };
 };

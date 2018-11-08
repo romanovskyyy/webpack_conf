@@ -8,7 +8,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import store from './store';
 
 window.$ = window.jQuery = require('jquery');
-require('semantic-ui-css/semantic');
 
 if (window.location.pathname === '/page-after-login') {
     window.location.href = sessionStorage.getItem('lastUrl');
@@ -19,7 +18,7 @@ if (window.location.pathname === '/page-after-login') {
                 <Route path="/" component={App} />
             </BrowserRouter>
         </Provider>,
-        document.getElementById('root')
+        document.getElementById('app')
     );
 
     if (module.hot) {
@@ -30,7 +29,7 @@ if (window.location.pathname === '/page-after-login') {
                         <Route path="/" component={App} />
                     </BrowserRouter>
                 </Provider>,
-                document.getElementById('root')
+                document.getElementById('app')
             );
         });
     }

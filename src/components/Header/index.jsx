@@ -9,7 +9,7 @@ import NavbarAuth from './NavbarAuth';
 import { connect } from 'react-redux';
 import { showModalAction } from '../../ducks/auth';
 import { withRouter } from 'react-router-dom';
-import { moveToTop, fixedHeader, addBusinessInitialData } from '../../helpers/common';
+import { moveToTop, fixedHeader } from '../../helpers/common';
 import { resetSearch } from '../../ducks/explore';
 import { resetAll } from '../../ducks/addBusiness';
 import { initialize, change } from 'redux-form';

@@ -4,7 +4,7 @@ import './style.scss';
 import MapWithRouting from '../../../helpers/Map/routing';
 import RouteInfo from '../RouteInfo';
 import { connect } from 'react-redux';
-import { isEqual, isEmpty } from 'lodash';
+import { isEqual, isEmpty } from 'lodash-es';
 import {
     setSelectedBusinessLocation,
     RESET_ROUTE_DATA,

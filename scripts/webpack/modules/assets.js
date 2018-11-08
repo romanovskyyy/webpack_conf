@@ -8,7 +8,7 @@ export const loadImages = () => ({
     module: {
         rules: [
             {
-                test: /\.(png|jpg|jpeg)$/,
+                test: /\.(png|jpg|jpeg|gif)$/,
                 use:  [
                     {
                         loader:  'file-loader',
@@ -28,21 +28,25 @@ export const loadSvg = () => ({
     module: {
         rules: [
             {
-                test:   /\.svg$/,
-                issuer: {
-                    // тот, кто заимпортил .svg
-                    test: /\.js$/,
-                },
+                test: /\.svg$/,
+                issuer: /\.jsx?$/,
                 use: [
-                    '@svgr/webpack',
                     {
-                        loader:  'file-loader',
-                        options: {
-                            name: `images/${CHUNK_NAME_ASSET}`,
-                        },
+                        loader: 'babel-loader'
                     },
-                ],
+                    {
+                        loader: 'react-svg-loader',
+                        options: {
+                            jsx: true, // true outputs JSX tags
+                            svgo: {
+                                plugins: [{ removeTitle: false }],
+                                floatPrecision: 2
+                            }
+                        }
+                    }
+                ]
             },
+           
             {
                 test:   /\.svg$/,
                 issuer: {
@@ -66,7 +70,7 @@ export const loadFonts = () => ({
     module: {
         rules: [
             {
-                test: /\.(woff2|eot)$/,
+                test: /\.(woff2|eot|ttf|woff)$/,
                 use:  [
                     {
                         loader:  'file-loader',

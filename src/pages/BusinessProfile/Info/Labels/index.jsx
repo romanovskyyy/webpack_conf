@@ -1,7 +1,7 @@
 import React from 'react';
 import Tag from './Tag';
 
-import { isEqual } from 'lodash';
+import { isEqual } from 'lodash-es';
 
 const areEqual = (prevProps, nextProps) => isEqual(prevProps, nextProps);
 

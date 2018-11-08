@@ -1,4 +1,4 @@
-import { isEqual, isObject, transform } from 'lodash';
+import { isEqual, isObject, transform } from 'lodash-es';
 
 export const objectDiff = (object, base) => {
     return transform(object, (result, value, key) => {

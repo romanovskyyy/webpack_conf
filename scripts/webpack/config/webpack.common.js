@@ -1,16 +1,15 @@
 // Core
 import merge from 'webpack-merge';
-import path from "path";
 
 // Instruments
-import {BUILD, CHUNK_NAME_JS, SOURCE} from '../constants';
+import { BUILD, CHUNK_NAME_JS } from '../constants';
 import {
     loadJavaScript,
     loadFonts,
     connectHtml,
     loadImages,
     loadSvg,
-    defineEnvVariables,
+    defineEnvVariables
 } from '../modules';
 
 export default () => {
@@ -19,17 +18,17 @@ export default () => {
 
     return merge(
         {
-            entry: SOURCE,
             output: {
-                path:          BUILD,
-                filename:      IS_DEVELOPMENT ? '[name].js' : `js/entry~${CHUNK_NAME_JS}`,
-                chunkFilename: IS_DEVELOPMENT
-                    ? '[name].js'
-                    : `js/chunk~${CHUNK_NAME_JS}`,
+                path: BUILD,
+                filename: IS_DEVELOPMENT ? '[name].js' : `js/entry~${CHUNK_NAME_JS}`,
+                chunkFilename: IS_DEVELOPMENT ? '[name].js' : `js/chunk~${CHUNK_NAME_JS}`,
                 hashDigestLength: 5,
                 // Фикс ссылок изобржений из 6-го урока ↓
-                // publicPath:       '/',
+                publicPath: '/'
             },
+            resolve: {
+                extensions: ['.js', '.jsx']
+            }
         },
         connectHtml(),
         loadJavaScript(),
@@ -37,9 +36,9 @@ export default () => {
         loadImages(),
         loadSvg(),
         defineEnvVariables({
-            __ENV__:  JSON.stringify(NODE_ENV),
-            __DEV__:  NODE_ENV === 'development',
-            __PROD__: NODE_ENV === 'production',
-        }),
+            __ENV__: JSON.stringify(NODE_ENV),
+            __DEV__: NODE_ENV === 'development',
+            __PROD__: NODE_ENV === 'production'
+        })
     );
 };

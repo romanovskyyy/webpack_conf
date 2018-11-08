@@ -19,6 +19,7 @@ module.exports = api => {
             [
                 '@babel/preset-env',
                 {
+                    useBuiltIns: "entry",
                     spec: true, // медленней, более строго
                     loose: false, // быстрей, менее строго
                     debug: false,

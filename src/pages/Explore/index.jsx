@@ -6,7 +6,7 @@ import queryString from 'query-string';
 import ErrorBounday from '../../components/ErrorBoundary';
 
 import { connect } from 'react-redux';
-import { debounce } from 'lodash';
+import { debounce } from 'lodash-es';
 import { asyncSearchDebounced, getSearchValue, resetSearch, changePage } from '../../ducks/explore';
 import { moveToTop } from '../../helpers/common';
 import { addSubcategoryToCategory } from '../../ducks/dropdown';
