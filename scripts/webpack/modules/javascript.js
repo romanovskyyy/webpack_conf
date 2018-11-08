@@ -10,6 +10,7 @@ export const loadJavaScript = () => {
                             compact: false,
                         },
                     },
+                   
                 },
             ],
         },
